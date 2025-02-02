@@ -10,6 +10,6 @@ class CSVDataProcessor():
 
 
 if __name__ == '__main__':
-    print("ran")
+    print("ran2")
     processor = CSVDataProcessor(123)
     print("ran2")
