@@ -1,2 +1,4 @@
 transactions/
 venv
+test.py
+__pycache__/

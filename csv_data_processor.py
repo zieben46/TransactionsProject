@@ -1,19 +1,34 @@
+from typing import List
+
+import pandas as pd
+import os
+
+
 class CSVDataProcessor():
 
-    def __init__(self, filepath: str) -> None:
-        self.filepath = filepath
+    def __init__(self, folderpath: str="transactions") -> None:
+        self.folderpath: str = folderpath
+        self.files_list: List[str] = self.file_names()
+
+    def load_csv(self) -> pd.DataFrame:
+       
+        csv_files = [f for f in os.listdir(self.folderpath) if f.endswith(".CSV")]
+        
+        df = pd.read_csv(f"{self.folderpath}/{self.files_list[0]}")
+
+        return df
 
 
-def add_numbers(x: int, y: int) -> int:
-    return x + y
+    def save_csv(self, df: pd.DataFrame, filename: str) -> None:
+        full_path = f"{self.folderpath}/unioned_{filename}"  # Ensure it saves as a .csv file
+        df.to_csv(full_path, index=False)
 
-# result = add_numbers(10, "hello")  # ❌ This will fail due to type mismatch
-
-
+    def file_names(self) -> List[str]:
+        return os.listdir(self.folderpath)
 
 
 if __name__ == '__main__':
-    print("ran 4")
-    # processor = CSVDataProcessor("test")
-    print("ran2")
-
+    csv = CSVDataProcessor()
+    df = csv.load_csv()
+    print(df)
+    pass
