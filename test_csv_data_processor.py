@@ -4,14 +4,17 @@ from csv_data_processor import CSVDataProcessor
 
 class TestCSVDataProcessor(unittest.TestCase):
 
-    # def test_has_filepath_attr(self):
+    def test_has_filepath_attr(self) -> None:
 
-    #     instance = CSVDataProcessor(filepath = "")
-    #     self.assertTrue(hasattr(instance, "filepath"))
+        instance = CSVDataProcessor(filepath = "")
 
-    def test_invalid_filepath_results_in_fails(self):
-        invalid_filepath: int = 1
-        CSVDataProcessor(invalid_filepath)
+        self.assertTrue(hasattr(instance, "filepath"))
+
+    # def test_invalid_filepath_results_in_fails(self) -> None:
+    #     pass
+
+        # invalid_filepath: int = 1
+        # CSVDataProcessor(2)
 
 
  #       with self.assertRaises(TypeError):
@@ -24,7 +27,7 @@ class TestCSVDataProcessor(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    CSVDataProcessor(filepath = 1)
+    CSVDataProcessor(filepath = "")
     print("why no error")
     # unittest.main()  # pragma: no cover
 
@@ -32,10 +35,10 @@ if __name__ == '__main__':
 
 
 
-def add_numbers(x: int, y: int) -> int:
-    return x + y
+# def add_numbers(x: int, y: int) -> int:
+#     return x + 
 
 
 
-def add_numbers2(x, y) -> int:
-    return x + y
+# def add_numbers2(x, y) -> int:
+#     return x + y

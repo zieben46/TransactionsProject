@@ -1,0 +1,12 @@
+{
+    "python.analysis.typeCheckingMode": "strict",
+    "python.languageServer": "Pylance",
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportReturnType": "error",
+        "reportUntypedFunction": "error",
+        "reportImplicitReturns": "error",
+        "reportIncompatibleReturnType": "error",
+        "reportMissingTypeArgument": "error",
+        "reportUnknownParameterType": "error"
+    }
+}
