@@ -8,6 +8,8 @@ class TestCSVDataProcessor(unittest.TestCase):
 
         instance = CSVDataProcessor(filepath = "")
 
+        instance2 = "ssdfsdfsdf"
+
         self.assertTrue(hasattr(instance, "filepath"))
 
     # def test_invalid_filepath_results_in_fails(self) -> None:
