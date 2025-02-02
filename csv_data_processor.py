@@ -4,7 +4,10 @@ class CSVDataProcessor():
         self.filepath = filepath
 
 
+def add_numbers(x: int, y: int) -> int:
+    return x + y
 
+result = add_numbers(10, "hello")  # ❌ This will fail due to type mismatch
 
 
 
