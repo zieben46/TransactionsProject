@@ -4,5 +4,4 @@ repos:
     hooks: []
     # hooks:
     #   - id: mypy
-    #     args: ["--explicit-package-bases"]
         # args: ["--strict", "--explicit-package-bases"]

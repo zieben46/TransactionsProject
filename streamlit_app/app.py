@@ -2,9 +2,6 @@
 # sys.path.append(r"C:\Users\ziebe\OneDrive\Desktop\Nicks Stuff\VSCode Workspace\TransactionsProject\venv\Lib\site-packages")
 
 
-import tests.tests_and_stuff
-
-
 
 
 # import streamlit_crud_backend
