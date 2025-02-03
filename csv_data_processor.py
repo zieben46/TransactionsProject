@@ -1,3 +1,4 @@
+from typing import List, Optional
 from typing import List
 from pandas import DataFrame
 
@@ -30,10 +31,15 @@ class CSVDataProcessor():
         df.to_csv(full_path, index=False)
 
 
-    def list_files(self, extension: str = None) -> List[str]:
+    def list_files(self, extension: Optional[str] = None) -> List[str]:
+        """Returns a list of files, optionally filtered by extension."""
         files = os.listdir(self.folderpath)
-        return [f for f in files if f.lower().endswith(extension.lower())] if extension else files
     
+        if extension:
+            extension = extension.lower()
+            return [f for f in files if f.lower().endswith(extension)]
+    
+        return files
 
     def refresh_files_list(self) -> None:
         self.csv_files = self.list_files(".CSV")
