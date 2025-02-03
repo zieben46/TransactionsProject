@@ -3,7 +3,7 @@ import os
 import pandas as pd
 import shutil
 from tempfile import mkdtemp
-from csv_data_processor import CSVDataProcessor  # Assuming your class is in `csv_data_processor.py`
+from backend_package.main.csv_data_processor import CSVDataProcessor  # Assuming your class is in `csv_data_processor.py`
 
 class TestCSVDataProcessorIntegration(unittest.TestCase):
     def setUp(self):

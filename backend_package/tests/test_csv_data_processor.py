@@ -4,15 +4,7 @@ import pandas as pd
 import os
 from io import StringIO
 
-
-from csv_data_processor import CSVDataProcessor
-
-
-
-"""
-read csvs, give them schema, union into one
-
-"""
+from backend_package.main.csv_data_processor import CSVDataProcessor
 
 
 
