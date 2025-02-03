@@ -12,7 +12,7 @@ class TestCSVDataProcessor(unittest.TestCase):
     
     TEST_FOLDERPATH = "test_transactions"
 
-    def test_invalid_instance_bad_folderpath(self):
+    def test_invalid_processor(self):
         with self.assertRaises(FileNotFoundError) as context:
             CSVDataProcessor("bad_folderpath")  # Should raise an error
 
@@ -40,14 +40,15 @@ class TestCSVDataProcessor(unittest.TestCase):
 
     @patch("pandas.DataFrame.to_csv")  # Mock pandas' to_csv method
     def test_save_csv_mock(self, mock_to_csv: MagicMock):
-        df = self.test_df
-        self.processor.save_csv(df, "mock_output.csv")
-        mock_to_csv.assert_called_once_with("test_transactions/unioned_mock_output.csv", index=False)
+        self.processor.save_csv(self.test_df, "mock_output.csv")
+        mock_to_csv.assert_called_once_with(f"{self.TEST_FOLDERPATH}/
+                                            unioned_mock_output.csv", index=False)
 
 
     @patch("os.listdir")
     def test_list_files_in_folder_mock(self, mock_listdir: MagicMock):
-        mock_listdir.return_value = ["file1_unioned.csv", "file2_unioned.csv", "other_file.txt"]
+        mock_listdir.return_value = ["file1_unioned.csv", "file2_unioned.csv", 
+                                     "other_file.txt"]
         files = self.processor.list_files()
         expected_files = ["file1_unioned.csv", "file2_unioned.csv"]
         [self.assertIn(file, files) for file in expected_files]
